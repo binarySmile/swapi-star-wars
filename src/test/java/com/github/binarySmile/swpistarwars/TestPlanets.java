@@ -12,7 +12,6 @@ public class TestPlanets {
 
     private static String param = "murky";
     private static String param1 = "swamp, jungles";
-    private static List <String> param3;//check residents = 0;
     private final String base_URL = "https://swapi.co/api/planets/";
 
     @Test
@@ -29,7 +28,8 @@ public class TestPlanets {
     public Object getObjectWithCollection(List <PlanetsResponse> list) {
         for (PlanetsResponse planet : list) {
             if (planet.getClimate().equals(param)
-                    && planet.getTerrain().equals(param1)) {
+                    && planet.getTerrain().equals(param1)
+                    && planet.getResidents().isEmpty()) {
                 return planet;
             }
         }
