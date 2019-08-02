@@ -1,8 +1,8 @@
 package com.github.binarySmile.swpistarwars;
 
-import com.github.binarySmile.swpistarwars.pojo.PlanetsResponse;
-import com.github.binarySmile.swpistarwars.pojo.SearchResponse;
-import org.junit.Test;
+import com.github.binarySmile.swpistarwars.pojo.planets.PlanetsResponse;
+import com.github.binarySmile.swpistarwars.pojo.planets.PlanetsSearchResponse;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -16,16 +16,17 @@ public class TestPlanets {
 
     @Test
     public void testPlanets() {
-        SearchResponse searchResponse = given()
+        PlanetsSearchResponse searchResponse = given()
                 .get(base_URL)
                 .body()
-                .as(SearchResponse.class);
+                .as(PlanetsSearchResponse.class);
 
-        searchResponse = (SearchResponse) getObjectWithCollection(searchResponse.getPlanets());
+        searchResponse = (PlanetsSearchResponse) getObjectFromCollection(searchResponse.getPlanets());
         System.out.println(searchResponse);
     }
 
-    public Object getObjectWithCollection(List <PlanetsResponse> list) {
+
+    public PlanetsSearchResponse getObjectFromCollection(List <PlanetsResponse> list) {
         for (PlanetsResponse planet : list) {
             if (planet.getClimate().equals(param)
                     && planet.getTerrain().equals(param1)

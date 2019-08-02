@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="StarWarsTest">
+    <test name="TestSuite">
+        <classes>
+            <class name="com.github.binarySmile.swpistarwars.TestPlanets"/>
+        </classes>
+    </test>
+</suite>

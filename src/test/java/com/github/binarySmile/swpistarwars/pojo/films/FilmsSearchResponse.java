@@ -1,4 +1,4 @@
-package com.github.binarySmile.swpistarwars.pojo;
+package com.github.binarySmile.swpistarwars.pojo.films;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -6,10 +6,10 @@ import javax.annotation.Generated;
 import java.util.List;
 
 @Generated("com.robohorse.robopojogenerator")
-public class SearchResponse {
+public class FilmsSearchResponse {
 
     @JsonProperty("next")
-    private String next;
+    private Object next;
 
     @JsonProperty("previous")
     private Object previous;
@@ -18,13 +18,13 @@ public class SearchResponse {
     private int count;
 
     @JsonProperty("results")
-    private List <PlanetsResponse> planets;
+    private List <FilmsResponse> results;
 
-    public String getNext() {
+    public Object getNext() {
         return next;
     }
 
-    public void setNext(String next) {
+    public void setNext(Object next) {
         this.next = next;
     }
 
@@ -44,22 +44,22 @@ public class SearchResponse {
         this.count = count;
     }
 
-    public List <PlanetsResponse> getPlanets() {
-        return planets;
+    public List <FilmsResponse> getResults() {
+        return results;
     }
 
-    public void setPlanets(List <PlanetsResponse> planets) {
-        this.planets = planets;
+    public void setResults(List <FilmsResponse> results) {
+        this.results = results;
     }
 
     @Override
     public String toString() {
         return
-                "SearchResponse{" +
+                "FilmsSearchResponse{" +
                         "next = '" + next + '\'' +
                         ",previous = '" + previous + '\'' +
                         ",count = '" + count + '\'' +
-                        ",results = '" + planets + '\'' +
+                        ",results = '" + results + '\'' +
                         "}";
     }
 }

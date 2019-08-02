@@ -1,4 +1,4 @@
-package com.github.binarySmile.swpistarwars.pojo;
+package com.github.binarySmile.swpistarwars.pojo.planets;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 import java.util.List;
 
 @Generated("com.robohorse.robopojogenerator")
-public class PlanetsResponse extends SearchResponse {
+public class PlanetsResponse extends PlanetsSearchResponse {
 
     @JsonProperty("films")
     private List <String> films;
